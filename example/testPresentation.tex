@@ -1,0 +1,115 @@
+\documentclass{beamer}
+\usetheme[progress]{uiuc}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs,mathtools,bbm,dsfont,mathrsfs,epstopdf}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\usepackage{csvsimple,booktabs}
+\usepackage{float}
+\usepackage{graphicx,xcolor}
+\usepackage{empheq}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{verbatim}
+\usepackage{enumerate}
+% \usepackage{rotating}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{arrows.meta, circuits.ee.IEC, tikzmark, decorations.pathreplacing, decorations.markings, calligraphy, calc, positioning}
+\tikzset{ac source/.style={
+  circuit symbol lines,
+  circuit symbol size = width 2 height 2,
+  shape = generic circle IEC,
+  /pgf/generic circle IEC/before background={
+    \pgfpathmoveto{\pgfpoint{-0.8pt}{0pt}}
+    \pgfpathsine{\pgfpoint{0.4pt}{0.4pt}}
+    \pgfpathcosine{\pgfpoint{0.4pt}{-0.4pt}}
+    \pgfpathsine{\pgfpoint{0.4pt}{-0.4pt}}
+    \pgfpathcosine{\pgfpoint{0.4pt}{0.4pt}}
+    \pgfusepath{stroke}
+  },
+  % invisible/.style={opacity=0},
+  % visible on/.style={alt={#1{}{invisible}}},
+  % alt/.code args={#1#2#3}{%
+  %   \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  % },
+}}
+\usepackage{marvosym}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\algnewcommand{\Initialize}[1]{%
+  \State \textbf{Initialize:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+\usepackage[backend=biber]{biblatex}
+% \addbibresource{pres_bib.bib}
+
+%------------------Style/Header-------------------------
+\input{header}
+
+%------------------Properties-------------------------
+\title{A Test Presentation}
+\titlegraphic{\includegraphics[height=4em]{Illinois-Logo.pdf}}
+\subtitle{Verifying the style}
+\author[A. N. Madavan]{Avinash N. Madavan}
+\institute[UIUC]{Univeristy of Illinois, Urbana-Champaign}
+\date{January 1, 2020}
+
+\graphicspath{{images/}}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Test header}
+  An example list:
+  \begin{itemize}
+    \item Testing lists.
+    \item An example equation
+    \begin{equation*}
+      f(x) = \frac{\sqrt{\alpha x}}{\sin(x)^2}.
+    \end{equation*}
+  \end{itemize}
+
+  An example enumeration:
+  \begin{enumerate}
+    \item Test A.
+    \item Test B.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Test frame 2}
+  
+\end{frame}
+
+\begin{frame}{Test frame 3}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions and future work}
+
+  \begin{columns}[c]
+    \begin{column}{0.1\linewidth}\end{column}
+    \begin{column}{0.1\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{Illinois-Logo.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.55\linewidth}
+      \vspace{1em}
+
+      {\Huge \bf Thank you!}
+      {\Large madavan2.web.illinois.edu}
+    \end{column}
+    \begin{column}{0.1\linewidth}\end{column}
+  \end{columns}
+\end{frame}
+
+\end{document}

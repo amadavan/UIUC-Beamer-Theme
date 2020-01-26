@@ -1,0 +1,23 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{helvet}
+\usefonttheme[onlymath]{serif}
+
+% Process options
+\newif\if@doProgress
+\@doProgressfalse
+\DeclareOption{progress}{\@doProgresstrue}
+\ProcessOptions
+
+% Settings
+\useinnertheme{uiuc}
+\useoutertheme{uiuc}
+\usefonttheme{uiuc}
+\usecolortheme{uiuc}
+
+\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{blocks}[rounded]
+
+\mode<all>
