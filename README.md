@@ -7,7 +7,19 @@ Like other themes, this can be installed by copying the `uiuc` directory into yo
 ![equation](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
 installation folder. The precise folder depends on your
 ![equation](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
-distribution.
+distribution. In general, this folder can be determined using the following command,
+
+```shell script
+kpsewhich -var-value=TEXMFHOME
+```
+
+If the `kpsewhich` function is not available, the typical installation folders are
+
+- Windows 10 - `C:\Users\<user name>\Appdata\Local\MikTex\<number>\tex\latex\local\`
+- Windows 7/Vista - `C:\Users\<user name>\texmf\tex\latex\local\`
+- Windows XP - `C:\Documents and Settings\<user name>\texmf\tex\latex\local\`
+- Linux - `~/texmf/tex/latex/local/`
+- Max OS X - `/Users/<user name>/Library/texmf/tex/latex/local/`
 
 ## Usage
 
@@ -43,7 +55,7 @@ The theme also defines certain useful colors, abiding by
 These colors are:
 
 | | Name | Description |
-| --- | --- | --- |
+| :---: | --- | --- |
 | ![UIblue](https://www.uillinois.edu/UserFiles/Servers/Server_1240/Image/img/palette-2767.png) | `UIblue` | Primary "U of I Blue" |
 | ![UIblueSub](https://www.uillinois.edu/UserFiles/Servers/Server_1240/Image/img/palette-2728.png) | `UIblueSub` | Secondary accent blue for subheaders and points of interest |
 | ![UIblueBold](https://www.uillinois.edu/UserFiles/Servers/Server_1240/Image/img/palette-2738.png) | `UIblueBold` | Secondary accent blue for knockout headers and overall mood |
