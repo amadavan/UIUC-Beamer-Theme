@@ -4,9 +4,9 @@ A simple beamer theme with a UIUC color scheme.
 ## Installation
 
 Like other themes, this can be installed by copying the `uiuc` directory into your
-![equation](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
+![LaTeX](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
 installation folder. The precise folder depends on your
-![equation](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
+![LaTeX](https://latex.codecogs.com/pdf.latex?\inline&space;\large&space;\LaTeX)
 distribution. In general, this folder can be determined using the following command,
 
 ```shell script
