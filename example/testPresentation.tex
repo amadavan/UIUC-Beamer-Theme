@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[11pt]{beamer}
 \usetheme[progress]{uiuc}
 
 \usepackage[utf8]{inputenc}
@@ -50,7 +50,7 @@
 % \addbibresource{pres_bib.bib}
 
 %------------------Style/Header-------------------------
-\input{header}
+% \input{header}
 
 %------------------Properties-------------------------
 \title{A Test Presentation}
@@ -66,6 +66,13 @@
 \begin{document}
 
 \frame{\titlepage}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction} % (fold)
+\label{sec:introduction}
 
 \begin{frame}{Test header}
   An example list:
@@ -84,16 +91,36 @@
   \end{enumerate}
 \end{frame}
 
+% section section_1 (end)
+
+\section{Body} % (fold)
+\label{sec:body}
+
+\subsection{Subsection 1} % (fold)
+\label{sub:subsection_1}
+
 \begin{frame}{Test frame 2}
   
 \end{frame}
+
+% subsection subsection_1 (end)
+
+\subsection{Subsection 2} % (fold)
+\label{sub:subsection_2}
 
 \begin{frame}{Test frame 3}
   
 \end{frame}
 
+% subsection subsection_2 (end)
+
+% section section_2 (end)
+
+\section{Conclusion} % (fold)
+\label{sec:conclusion}
+
 \begin{frame}
-  \frametitle{Conclusions and future work}
+  % \frametitle{Conclusions and future work}
 
   \begin{columns}[c]
     \begin{column}{0.1\linewidth}\end{column}
@@ -111,5 +138,17 @@
     \begin{column}{0.1\linewidth}\end{column}
   \end{columns}
 \end{frame}
+
+% section conclusion (end)
+
+\section{Appendix} % (fold)
+\label{sec:appendix}
+
+\begin{frame}{Appendix A}
+\end{frame}
+
+\begin{frame}{Appendix B}
+\end{frame}
+
 
 \end{document}
