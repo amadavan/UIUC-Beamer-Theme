@@ -2,13 +2,18 @@
 
 % Requirement
 \RequirePackage{tikz}
-\RequirePackage{helvet}
+\RequirePackage[scaled=0.9]{helvet}
 \usefonttheme[onlymath]{serif}
 
 % Process options
 \newif\if@doProgress
 \@doProgressfalse
 \DeclareOption{progress}{\@doProgresstrue}
+
+\newif\if@serif
+\@seriffalse
+\DeclareOption{serif}{\@seriftrue \usefonttheme{serif}}
+
 \ProcessOptions
 
 % Settings
@@ -18,6 +23,5 @@
 \usecolortheme{uiuc}
 
 \setbeamertemplate{navigation symbols}{}
-% \setbeamertemplate{blocks}[rounded]
 
 \mode<all>

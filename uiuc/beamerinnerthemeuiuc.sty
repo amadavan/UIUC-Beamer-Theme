@@ -3,91 +3,79 @@
 \setbeamercolor*{body in head/foot}{parent=palette uiuc}
 \setbeamercolor*{caption}{fg=UIneutralDark}
 
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}{%
+\leavevmode\leftskip=5.65ex%
+  \llap{\raisebox{0.2ex}{\textcolor{structure}{$\blacktriangleright$}}\kern1ex}%
+  \inserttocsubsection\par%
+}
+
+\setbeamertemplate{itemize subitem}{$\bullet$}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight);
+    \ifnum\thepage=1\relax %
+    \fill[color=UIblue] (0,0) rectangle (\the\paperwidth, \the\paperheight);
+    \node[above] at (0,0) {\includegraphics[height=\the\paperheight]{Illinois-Logo-Orange.pdf}};
+    \fi
+  \end{tikzpicture}
+}
+
 \defbeamertemplate*{title page}{uiuc}[1][]
 {
   \vbox{}
   \begingroup
-	% \begin{tikzpicture}[remember picture,overlay]
-	% \fill[UrbanaOrange] (current page.south west) -- (current page.north west) -- (current page.north east) -- (current page.south east);
-	% \end{tikzpicture}
-    % \addtolength{\leftskip} {-1em} % increase (absolute) value if needed
-    % \addtolength{\rightskip}{-1em}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+    % \vspace{0.3\paperheight}
+    \begin{beamercolorbox}[leftskip=1in,sep=8pt,#1]{palette titlepage}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
-      \else%
+      \else
         \vskip0.25em%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        {\usebeamerfont{subtitle}\insertsubtitle\par}%
       \fi%
-    \end{beamercolorbox}%
-    \vskip2em
-    \centering
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-    \vskip2em\par
-    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+    \end{beamercolorbox}
+    \vskip1em
+    \begin{beamercolorbox}[leftskip=1in,sep=8pt,#1]{palette titlepage}
       \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+    \begin{beamercolorbox}[leftskip=1in,sep=8pt,#1]{palette titlepage}
       \usebeamerfont{institute}\insertinstitute
     \end{beamercolorbox}
-    % \begin{beamercolorbox}[sep=8pt,center,#1]{date}
-    %   \usebeamerfont{date}\insertdate
-    % \end{beamercolorbox}
+    \begin{beamercolorbox}[leftskip=1in,sep=8pt,#1]{palette titlepage}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
   \endgroup
 }
 
-% \RequirePackage{tikz}
-% \defbeamertemplate*{title page}{uiuc}[1][]
-% {
-% 	\vbox{}
-% 	\begingroup
-% 	\begin{tikzpicture}[remember picture,overlay]
-% 	\fill[UrbanaOrange] (current page.south west) -- (current page.north west) -- ([xshift=38mm]current page.north west) -- ([xshift=38mm]current page.south west);
-% 	% \fill[UIblue] (current page.south west) -- (current page.north west) -- ([xshift=2.25in]current page.north west) -- ([xshift=1.25in]current page.south west);
-% 	\path (current page.north west) -- (current page.south west) node[midway,align=center,xshift=20mm] {\includegraphics[height=0.25\textheight]{Illinois-Logo-White.pdf}\par} ;
-% 	\node[anchor=south west] at ([xshift=39mm,yshift=-32mm]current page.north west) (title) {\parbox[t]{0.7\paperwidth}{\raggedright \usebeamerfont{title}{\inserttitle}}};
-% 	\node[anchor=north west] at ([xshift=39mm,yshift=-32mm]current page.north west) (subtitle) {\parbox[t]{0.7\paperwidth}{\raggedright \usebeamerfont{subtitle}{\insertsubtitle}}};
-% 	\node[anchor=south west] at ([xshift=39mm,yshift=32mm]current page.south west) (author) {\parbox[t]{0.7\paperwidth}{\raggedright \usebeamerfont{author}{\insertauthor}}};
-% 	\node[anchor=north west] at ([xshift=39mm,yshift=32mm]current page.south west) (institute) {\parbox[t]{0.7\paperwidth}{\raggedright \usebeamerfont{institute}{\insertinstitute}}};
-% 	\end{tikzpicture}
-% 	\endgroup
-% }
+\defbeamertemplate*{section page}{uiuc}
+{
+    \begingroup
+      \vbox{}
+      \begin{beamercolorbox}[center]{section title}
+        \usebeamerfont{section title}\insertsection\par
+      \end{beamercolorbox}
+    \endgroup
+}
 
-% \defbeamertemplate*{title page}{uiuc}[1][]
-% {
-% 	\vbox{}
-% 	\vfill
-% 	\begingroup
-% 	\begin{columns}[c]
-% 	\begin{column}{0.75\textwidth}
-%     \begin{beamercolorbox}[sep=4pt,left,#1]{title}
-%       \usebeamerfont{title}\inserttitle\par%
-%       \ifx\insertsubtitle\@empty%
-%       \else%
-%         \vskip0.25em%
-%         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-%       \fi%     
-%     \end{beamercolorbox}%
-%     \vskip4em\par
-%     \begin{beamercolorbox}[sep=4pt,left,#1]{author}
-%       \usebeamerfont{author}\insertauthor
-%     \end{beamercolorbox}
-%     \begin{beamercolorbox}[sep=4pt,left,#1]{institute}
-%       \usebeamerfont{institute}\insertinstitute
-%     \end{beamercolorbox}
-%     % \begin{beamercolorbox}[sep=4pt,left,#1]{date}
-%     %   \usebeamerfont{date}\insertdate
-%     % \end{beamercolorbox}
-% 	\end{column}
-% 	\begin{column}{0.25\textwidth}
-% 	\centering
-%     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-% 	\end{column}
-% 	\end{columns}
-% 	\endgroup
-% 	\vfill
-% }
-
+% Captions
 \setbeamertemplate{caption}{\usebeamercolor{caption}\tiny\insertcaption}
+
+
+% % Blocks
+\defbeamertemplate{block begin}{uiuc}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex,wd=\paperwidth,sep=1em,leftskip=1em,rightskip=1em]{block title}
+    \usebeamerfont*{block title}\insertblocktitle%
+    {\parskip0pt\par}%
+    \ifbeamercolorempty[bg]{block title}
+    {}
+    {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+\defbeamertemplate{block end}{uiuc}  
+{\end{beamercolorbox}\vskip\smallskipamount}
+
 
 \mode<all>

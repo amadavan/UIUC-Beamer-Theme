@@ -2,8 +2,10 @@
 
 \setbeamercolor*{body in head/foot}{parent=palette uiuc}
 
+\newlength{\infoheight}
+\setlength{\infoheight}{0.66em}
 
-\defbeamertemplate*{footline}{infolines theme}
+\defbeamertemplate*{footline}{uiuc theme}
 {%
 \ifnum \insertpagenumber=1
   \leavevmode%
@@ -13,7 +15,7 @@
 \else
   \leavevmode%
   \begin{tikzpicture}[remember picture, overlay]
-    \def\infoheight{1em}
+    % \def\infoheight{1em}
     \def\center{0.5\paperwidth}
     \if@doProgress
       \ifnum \inserttotalframenumber>2
@@ -22,16 +24,18 @@
     \fi
     \def\diff{2}
     \def\ddiff{0.5}
-    \fill[UIblue] (0,0) -- (0, \infoheight) -- ({\center-\diff-\ddiff},\infoheight) -- ({\center+\diff-\ddiff}, 0.5\infoheight) -- ({\center-\diff-\ddiff}, 0);
-    \fill[UrbanaOrange] (\paperwidth, 0) -- (\paperwidth, \infoheight) -- ({\center-\diff+\ddiff},\infoheight) -- ({\center+\diff+\ddiff}, 0.5\infoheight) -- ({\center-\diff+\ddiff}, 0);
-    \node[xshift=0.75em, yshift={0.5\infoheight}] at (current page.south west) {\includegraphics[height=0.75em]{Illinois-Logo-White.pdf}};
-    \node[xshift=-0.75em, yshift={0.5\infoheight}, text=white] at (current page.south east) {\insertpagenumber};
+    % \fill[UIblue] (0,0) -- (0, \infoheight) -- ({\center-\diff-\ddiff},\infoheight) -- ({\center+\diff-\ddiff}, 0.5\infoheight) -- ({\center-\diff-\ddiff}, 0);
+    \fill[UIblue] (0,0) -- (0, \infoheight) -- ({\center-\diff-\ddiff},\infoheight) -- ({\center+\diff-\ddiff}, 0);
+    % \fill[UrbanaOrange] (\paperwidth, 0) -- (\paperwidth, \infoheight) -- ({\center-\diff+\ddiff},\infoheight) -- ({\center+\diff+\ddiff}, 0.5\infoheight) -- ({\center-\diff+\ddiff}, 0);
+    \fill[UrbanaOrange] (\paperwidth, 0) -- (\paperwidth, \infoheight) -- ({\center-\diff+\ddiff},\infoheight) -- ({\center+\diff+\ddiff}, 0);
+    \node[xshift=0.75em, yshift={0.5\infoheight}, anchor=center] at (current page.south west) {\includegraphics[height=0.75em]{Illinois-Logo-White.pdf}};
+    \node[xshift=-0.75em, yshift={0.5\infoheight}, anchor=center, text=white] at (current page.south east) {\insertpagenumber};
   \end{tikzpicture}
   % \hbox{%
   % \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{body in head/foot}%
   %  \begin{tikzpicture}[remember picture,overlay]
-	 %  \node[anchor=south west,xshift=1ex] at (current page.south west) {\includegraphics[height=1em]{Illinois-Logo.pdf}};
-	 % \end{tikzpicture}
+   %  \node[anchor=south west,xshift=1ex] at (current page.south west) {\includegraphics[height=1em]{Illinois-Logo.pdf}};
+   % \end{tikzpicture}
   %  \insertpagenumber{}\hspace*{2ex} 
   % \end{beamercolorbox}}%
   % }
